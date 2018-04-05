@@ -9,11 +9,12 @@
 Summary:	Reads log file lines that have not been read
 Name:		python-%{pypi_name}
 Version:	0.8.0
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		Libraries/Python
 Source0:	https://github.com/bgreenlee/pygtail/archive/%{version}.tar.gz
 # Source0-md5:	504ffc804e83a4dd09e20546990b1d43
+Patch0:		python-pygtail-bug-38.patch
 URL:		https://github.com/bgreenlee/pygtail
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.714
@@ -45,6 +46,8 @@ handle log files that have been rotated.
 
 %prep
 %setup -q -n %{pypi_name}-%{version}
+%patch0 -p1
+
 sed -i -e 's#0\.7\.0#0\.8\.0#g' pygtail/core.py
 
 %build
