@@ -46,7 +46,7 @@ handle log files that have been rotated.
 
 %prep
 %setup -q -n %{pypi_name}-%{version}
-%patch0 -p1
+%patch -P 0 -p1
 
 sed -i -e 's#0\.7\.0#0\.8\.0#g' pygtail/core.py
 
