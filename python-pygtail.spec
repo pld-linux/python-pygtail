@@ -9,7 +9,7 @@
 Summary:	Reads log file lines that have not been read
 Name:		python-%{pypi_name}
 Version:	0.8.0
-Release:	10
+Release:	11
 License:	GPL v2
 Group:		Libraries/Python
 Source0:	https://github.com/bgreenlee/pygtail/archive/%{version}.tar.gz
